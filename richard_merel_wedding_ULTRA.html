@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richard & Merel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Inter',sans-serif;
+background:#f6f3ee;
+color:#2b2b2b;
+scroll-behavior:smooth;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(246,243,238,0.85);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:center;
+z-index:1000;
+border-bottom:1px solid #e5e0d8;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+padding:15px;
+}
+
+nav a{
+text-decoration:none;
+color:#2b2b2b;
+font-size:13px;
+letter-spacing:1px;
+text-transform:uppercase;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero-overlay{
+background:rgba(0,0,0,0.35);
+padding:80px;
+animation:fadeIn 2s ease;
+}
+
+.hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:64px;
+letter-spacing:3px;
+}
+
+.hero p{margin-top:15px;font-size:18px;}
+
+/* SECTIONS */
+section{
+max-width:900px;
+margin:120px auto;
+padding:0 20px;
+text-align:center;
+opacity:0;
+transform:translateY(30px);
+transition:all 1s ease;
+}
+
+section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+h2{
+font-family:'Cormorant Garamond',serif;
+font-size:34px;
+margin-bottom:10px;
+}
+
+.divider{
+width:60px;
+height:1px;
+background:#b9b2a6;
+margin:25px auto;
+}
+
+/* TIMELINE */
+.timeline{
+text-align:left;
+margin-top:40px;
+line-height:1.8;
+}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:40px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+cursor:pointer;
+transition:transform 0.3s ease;
+}
+
+.gallery img:hover{transform:scale(1.03);}
+
+/* DRESS CODE */
+.box{
+background:#ede7dd;
+padding:30px;
+margin-top:30px;
+}
+
+/* RSVP */
+form input,form select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+}
+
+button{
+padding:14px 40px;
+background:#111;
+color:white;
+border:none;
+cursor:pointer;
+letter-spacing:1px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+margin:80px 0;
+font-size:12px;
+color:#777;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.8);
+align-items:center;
+justify-content:center;
+z-index:2000;
+}
+
+.modal img{
+max-width:90%;
+max-height:80%;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<ul>
+<li><a href="#welcome">Welcome</a></li>
+<li><a href="#weekend">Weekend</a></li>
+<li><a href="#dress">Dress Code</a></li>
+<li><a href="#gallery">Tuscany</a></li>
+<li><a href="#location">Location</a></li>
+<li><a href="#rsvp">RSVP</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+<div class="hero-overlay">
+<h1>Richard & Merel</h1>
+<p>9–10 July 2027 • Tuscany</p>
+<div id="countdown"></div>
+</div>
+</div>
+
+<section id="welcome">
+<h2>Welcome</h2>
+<div class="divider"></div>
+<p>
+We invite you to join us at Castello di Celsa for a weekend in the heart of Tuscany.
+</p>
+</section>
+
+<section id="weekend">
+<h2>The Weekend</h2>
+<div class="divider"></div>
+<div class="timeline">
+<strong>Friday 9 July</strong><br>Pizza Party • 4:00 PM<br><br>
+<strong>Saturday 10 July</strong><br>Ceremony & Reception • 4:00 PM
+</div>
+</section>
+
+<section id="dress">
+<h2>Dress Code</h2>
+<div class="divider"></div>
+
+<div class="box">
+<strong>Ceremony</strong><br>
+Suit & tie for gentlemen<br>Dresses for ladies<br><br>
+
+<strong>Reception – White Party</strong><br>
+Bride wears colour<br>Guests wear white
+</div>
+</section>
+
+<section id="gallery">
+<h2>Tuscany</h2>
+<div class="divider"></div>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1501854140801-50d01698950b">
+<img src="https://images.unsplash.com/photo-1526481280695-3c687fd5432c">
+<img src="https://images.unsplash.com/photo-1500043357865-c6b8827edf99">
+<img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b">
+<img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+</div>
+</section>
+
+<section id="location">
+<h2>Location</h2>
+<div class="divider"></div>
+<p><strong>Castello di Celsa</strong><br>Tuscany, Italy</p>
+
+<iframe
+src="https://www.google.com/maps?q=Castello+di+Celsa&output=embed"
+width="100%" height="320" style="border:0;margin-top:20px;"></iframe>
+</section>
+
+<section id="rsvp">
+<h2>RSVP</h2>
+<div class="divider"></div>
+
+<form action="https://formspree.io/f/YOURFORMID" method="POST">
+<input type="text" name="name" placeholder="Full Name" required>
+
+<select name="attendance" required>
+<option value="">Will you attend?</option>
+<option>Accept with pleasure</option>
+<option>Decline with regret</option>
+</select>
+
+<input type="text" name="dietary" placeholder="Dietary requirements">
+<input type="text" name="plusone" placeholder="Plus One">
+
+<button type="submit">Send RSVP</button>
+</form>
+</section>
+
+<footer>
+Richard & Merel • Tuscany 2027
+</footer>
+
+<div class="modal" id="modal" onclick="this.style.display='none'">
+<img id="modalImg">
+</div>
+
+<script>
+// COUNTDOWN
+const target = new Date("July 9, 2027 16:00:00").getTime();
+setInterval(()=>{
+const now = new Date().getTime();
+const diff = target-now;
+const days = Math.floor(diff/(1000*60*60*24));
+document.getElementById("countdown").innerText = days + " days to go";
+},1000);
+
+// SCROLL ANIMATION
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+sections.forEach(s=>{
+const rect=s.getBoundingClientRect();
+if(rect.top<window.innerHeight-100){
+s.classList.add("visible");
+}
+});
+});
+
+// GALLERY MODAL
+const imgs=document.querySelectorAll(".gallery img");
+const modal=document.getElementById("modal");
+const modalImg=document.getElementById("modalImg");
+
+imgs.forEach(i=>{
+i.onclick=()=>{
+modal.style.display="flex";
+modalImg.src=i.src;
+}
+});
+</script>
+
+</body>
+</html>
